@@ -40,8 +40,8 @@ func main (){
 	var discoveryClient discover.DiscoveryClient
 
 	//在此处决定实现的接口的具体结构体【表现出的逻辑正是决定是否实现接口由调用者来决定】
-	//discoveryClient, err := discover.NewKitDiscoverClient(*consulHost, *consulPort)
-	discoveryClient, err := discover.NewMyDiscoverClient(*consulHost, *consulPort)
+	discoveryClient, err := discover.NewKitDiscoverClient(*consulHost, *consulPort)
+	//discoveryClient, err := discover.NewMyDiscoverClient(*consulHost, *consulPort)
 	// 获取服务发现客户端失败，直接关闭服务
 	if err != nil{
 		config.Logger.Println("Get Consul Client failed")
